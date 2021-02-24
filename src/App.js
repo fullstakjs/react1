@@ -66,7 +66,8 @@ function App() {
        {todos.map((my_dos)=>{
          return(
            <div className="todolist">
-             <p>{my_dos.tname}</p>
+             <p>{my_dos.tname} </p>
+             <span>{my_dos.priority}</span>
            </div>
          )
        })}

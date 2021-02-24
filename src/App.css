@@ -22,6 +22,9 @@ body{
 
 
 }
+.form h1{
+  color: rgb(19, 18, 18);
+}
 .form label{
   text-align: left;
   font-size: 18px;
@@ -41,7 +44,7 @@ body{
   border-radius: 3px;
   border: none;
   color: rgba(32, 34, 36, 0.467);
-  margin: 10px auto;
+  margin: 0px auto 10px;
 }
 .form button{
   display: block;
@@ -50,7 +53,7 @@ body{
   margin: 0 auto;
   padding: 5px;
   font-size: 18px;
-  background-color: black;
+  background-color: rgb(19, 18, 18);
   color: #ffff;
   border: none;
   outline: none;
@@ -77,12 +80,21 @@ body{
 }
 .todolist{
   width: 100%;
+  display: flex;
+  
 }
-.todolist p{
+.todolist p, span{
+  flex: 1;
   background-color: #f4f4f4;
-  color: cadetblue;
+  color: rgb(19, 18, 18);
   margin: 5px 0;
+  padding: 5px;
+  
 }
+.todolist span{
+  text-align: right;
+}
+
 
 .App-logo {
   height: 40vmin;
