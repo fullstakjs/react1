@@ -3,7 +3,7 @@ import './App.css';
 const whatTodo=[
   {
     id:0,
-    tname: "Learn Js",
+    tname: "Learn JavaSceipt",
     priority:1
   },
   {
@@ -59,7 +59,7 @@ function App() {
            <input name="tname" type="text" value={todo.tname} onChange={handleChange}/>
            <label htmlFor="priority">Priority:</label>
            <input name="priority" type="text" value={todo.priority} onChange={handleChange}/>
-           <button type="submit">Add todo</button>
+           <button type="submit">todo +</button>
          </form>
       </div>
       <div className="content">
