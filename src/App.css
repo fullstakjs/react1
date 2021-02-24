@@ -9,28 +9,39 @@ body{
 .App {
   text-align: center;
   display: flex;
-  width: 80%;
-  margin: 0 auto;
+  max-width: 70%;
+  margin: 20px auto;
   text-align: center;
+  flex-direction: column;
 }
 .form{
   flex: 1;
-  padding: 20px;
+  padding: 40px;
   background-color: #1234;
-  height: 100vh;
+  height: auto;
 
+
+}
+.form label{
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(39, 38, 38);
+  width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 .form input{
   display: block;
   height: 24px;
-  width: 100%;
+  width: 50%;
   padding: 5px;
-  margin: 1.2em 0;
   font-size: 18px;
   outline: none;
   border-radius: 3px;
   border: none;
   color: rgba(32, 34, 36, 0.467);
+  margin: 10px auto;
 }
 .form button{
   display: block;
@@ -63,6 +74,14 @@ body{
   background-color: #1234;
   color: #ffff;
   
+}
+.todolist{
+  width: 100%;
+}
+.todolist p{
+  background-color: #f4f4f4;
+  color: cadetblue;
+  margin: 5px 0;
 }
 
 .App-logo {

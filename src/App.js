@@ -3,17 +3,17 @@ import './App.css';
 const whatTodo=[
   {
     id:0,
-    name: "Learn Js",
+    tname: "Learn Js",
     priority:1
   },
   {
     id:1,
-    name: "Learn Angular",
+    tname: "Learn Angular",
     priority:3
   },
   {
     id:2,
-    name: "Learn React",
+    tname: "Learn React",
     priority:2
   }
 ]
@@ -21,8 +21,9 @@ const whatTodo=[
 function App() {
   const [todos,setTodos]= useState(whatTodo);
   const [todo, settodo] = useState({
+    id:"0",
     tname:"",
-    priority:""
+    priority:0
   });
 
   function handleChange(e){
@@ -31,35 +32,44 @@ function App() {
     settodo({
       ...todo,
       [e.target.name]: value,
-      [e.target.pri]:value
-
+      [e.target.name]: value
     })
-
-    console.log(todo)
-  
   }
   function handleSubmit(e){
+    e.preventDefault()
+    const {tname, priority}=todo;
+    const tdo={
+      id: todos.length + 1,
+      tname: tname,
+      priority: priority
+
+    }
+    console.log("tdo created"+tdo);
+    setTodos(todos.concat(tdo));
+    console.log(todos)
   
   }
 
   return (
     <div className="App">
       <div className="form">
-        <h1>Add your todo list</h1>
+        <h1>Todo List</h1>
          <form onSubmit={handleSubmit}>
+           <label htmlFor="tname">What to do:</label>
            <input name="tname" type="text" value={todo.tname} onChange={handleChange}/>
-           <input name="pri" type="text" value={todo.priority} onChange={handleChange}/>
+           <label htmlFor="priority">Priority:</label>
+           <input name="priority" type="text" value={todo.priority} onChange={handleChange}/>
            <button type="submit">Add todo</button>
          </form>
       </div>
       <div className="content">
-       {/* {todos.map((doc)=>{
-           return(
-             
-               <p key={doc.id}>{doc.name} and priority of {doc.priority}</p>
-             
-           )
-       })} */}
+       {todos.map((my_dos)=>{
+         return(
+           <div className="todolist">
+             <p>{my_dos.tname}</p>
+           </div>
+         )
+       })}
       </div>
     </div>
   );
